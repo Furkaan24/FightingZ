@@ -1,0 +1,81 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Photon.Pun;
+
+public class PlayerAttack : MonoBehaviour
+{
+    private float timeBtwAttack;
+    private float startTimeBtwAttack;
+
+    public Transform attackPos;
+    public LayerMask whatIsEnemies;
+    public float attackRangeLight = 2f;
+    public float attackRangeHeavy = 2.4f;
+    public int lightDamage = 10;
+    public int heavyDamage = 20;
+
+    PhotonView view;
+
+    void Start()
+    {
+        view = GetComponent<PhotonView>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+    if (view.IsMine)
+    {
+        if (timeBtwAttack <= 0)
+        {
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                view.RPC("LightAttack", RpcTarget.All);
+            }
+            else if (Input.GetKeyDown(KeyCode.K))
+            {
+                view.RPC("HeavyAttack", RpcTarget.All);
+            }
+            else
+            {
+                timeBtwAttack -= Time.deltaTime;
+            }
+            timeBtwAttack = startTimeBtwAttack;
+        }
+        else
+        {
+            timeBtwAttack -= Time.deltaTime;
+        }
+    }
+    }
+
+    [PunRPC]
+    void LightAttack()
+    {
+        // Light attack
+        Collider2D[] enemyToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRangeLight, whatIsEnemies);
+        for (int i = 0; i < enemyToDamage.Length; i++)
+        {
+            enemyToDamage[i].GetComponent<Enemy>().TakeDamage(lightDamage);
+        }
+    }
+
+    [PunRPC]
+    void HeavyAttack()
+    {
+        // Heavy attack
+        Collider2D[] enemyToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRangeHeavy, whatIsEnemies);
+        for (int i = 0; i < enemyToDamage.Length; i++)
+        {
+            enemyToDamage[i].GetComponent<Enemy>().TakeDamage(heavyDamage);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPos.position, attackRangeLight);
+        Gizmos.DrawWireSphere(attackPos.position, attackRangeHeavy);
+    }
+}
