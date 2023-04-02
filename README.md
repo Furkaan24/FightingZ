@@ -1,4 +1,4 @@
-# FightingZ
+# FightingZ Multiplayer Fighting Game with Photon
 
 Mohammad Yusuf Anwari 575614
 
