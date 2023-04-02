@@ -304,8 +304,8 @@ MonoBehaviour:
     m_Bits: 64
   attackRangeLight: 1.8
   attackRangeHeavy: 2
-  lightDamage: 10
-  heavyDamage: 20
+  lightDamage: 50
+  heavyDamage: 100
 --- !u!114 &9101053906176108119
 MonoBehaviour:
   m_ObjectHideFlags: 0

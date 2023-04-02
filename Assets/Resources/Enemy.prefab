@@ -312,8 +312,8 @@ MonoBehaviour:
     m_Bits: 128
   attackRangeLight: 1.8
   attackRangeHeavy: 2
-  lightDamage: 10
-  heavyDamage: 20
+  lightDamage: 50
+  heavyDamage: 100
 --- !u!82 &8018214100983815778
 AudioSource:
   m_ObjectHideFlags: 0
