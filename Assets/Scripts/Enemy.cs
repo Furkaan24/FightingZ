@@ -105,8 +105,8 @@ public class Enemy : MonoBehaviour
         if(healthSystem.GetCurrentHealth() <= 0)
         {
             healthSystem.Kill();
-            Destroy(gameObject);
-            SceneManager.LoadScene("GameOver");
+            PhotonNetwork.LoadLevel("GameOver");
+            PhotonNetwork.Destroy(gameObject);
         } 
     }
 

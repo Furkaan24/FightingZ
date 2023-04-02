@@ -38,7 +38,7 @@ public class SwordNinja : MonoBehaviour
         }
     }
 
-    //[PunRPC]
+    [PunRPC]
     void Update()
     {
     	if (view.IsMine) {   
@@ -96,8 +96,8 @@ public class SwordNinja : MonoBehaviour
             if(healthSystem.GetCurrentHealth() <= 0)
             {
             	healthSystem.Kill();
+            	PhotonNetwork.LoadLevel("GameOver");
             	PhotonNetwork.Destroy(gameObject);
-            	SceneManager.LoadScene("GameOver");
             }
         }
     }
