@@ -38,7 +38,6 @@ public class SwordNinja : MonoBehaviour
         }
     }
 
-    [PunRPC]
     void Update()
     {
     	if (view.IsMine) {   
