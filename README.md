@@ -28,3 +28,7 @@ https://www.youtube.com/watch?v=K4uOjb5p3Io&t=2s
 https://www.youtube.com/watch?v=sPiVz1k-fEs
 
 https://www.youtube.com/watch?v=sPiVz1k-fEs //melee combat attack range
+
+https://opengameart.org/content/pixel-art-street-backgrounds //city background
+
+https://assetstore.unity.com/packages/2d/characters/ninja-sprite-sheet-free-93901 // Ninja Sprite
