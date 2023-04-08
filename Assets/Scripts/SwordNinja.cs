@@ -16,6 +16,9 @@ public class SwordNinja : MonoBehaviour
     public float movementSpeed = 4f;
     private float dazedTime;
     public float startDazedTime;
+    //https://www.youtube.com/watch?v=dwcT-Dch0bA&t=919s - movement
+    //https://www.youtube.com/watch?v=1QfxdUpVh5I&t=27s - fighting mechanics
+    //https://www.youtube.com/watch?v=mZQQ0GUi2vM&t=188s - syn 
 
     PhotonView view;
 
