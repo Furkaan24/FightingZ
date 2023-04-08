@@ -14,6 +14,7 @@ public class PlayerAttack : MonoBehaviour
     public float attackRangeHeavy = 2.4f;
     public int lightDamage = 10;
     public int heavyDamage = 20;
+    //https://www.youtube.com/watch?v=sPiVz1k-fEs
 
     PhotonView view;
 
